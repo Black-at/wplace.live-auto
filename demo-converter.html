@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Démo - Convertisseur d'Image pour WPlace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .demo-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .step {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .step h3 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+
+        .buttons {
+            margin: 30px 0;
+        }
+
+        .btn {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #45a049;
+        }
+
+        .btn.secondary {
+            background: #2196F3;
+        }
+
+        .btn.secondary:hover {
+            background: #1976D2;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .feature h4 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>🎨 Convertisseur d'Image pour WPlace Bot</h1>
+
+        <p>Transformez n'importe quelle image en pixel art pour l'utiliser automatiquement sur wplace.live !</p>
+
+        <div class="step">
+            <h3>📋 Comment Utiliser</h3>
+            <ol style="text-align: left;">
+                <li><strong>Ouvrez wplace.live</strong> dans votre navigateur</li>
+                <li><strong>Ouvrez la Console</strong> (F12 → onglet "Console")</li>
+                <li><strong>Chargez d'abord le bot</strong> (code ci-dessous)</li>
+                <li><strong>Utilisez les outils</strong> pour créer/convertir votre image</li>
+                <li><strong>Collez le script généré</strong> dans la console</li>
+                <li><strong>Exécutez wplaceBot.start()</strong> pour commencer à dessiner</li>
+            </ol>
+        </div>
+
+        <div class="step" style="background: #fff3cd; border-left-color: #ffc107;">
+            <h3>⚠️ IMPORTANT - Charger le Bot d'abord</h3>
+            <p><strong>AVANT d'utiliser n'importe quel outil, vous DEVEZ charger le bot dans la console de wplace.live :</strong></p>
+            <code style="background: #2d3748; color: #e2e8f0; padding: 15px; display: block; margin: 10px 0; border-radius: 4px; font-family: monospace;">
+fetch('https://raw.githubusercontent.com/gcampos04/wplace-automation/main/wplace-bot.js').then(r=>r.text()).then(eval)
+            </code>
+            <p>✅ Attendez de voir le message "🎨 WPlace Bot chargé !" et le panneau apparaître dans le coin de l'écran.</p>
+        </div>
+
+        <div class="buttons">
+            <a href="image-converter.html" class="btn">🔧 Ouvrir le Convertisseur</a>
+            <a href="pixel-editor.html" class="btn" style="background: #9C27B0;">🎨 Éditeur de Pixel Art</a>
+            <a href="wplace-bot.js" class="btn secondary" download>📥 Télécharger le Bot</a>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h4>🖼️ Support de Plusieurs Formats</h4>
+                <p>PNG, JPG, JPEG, GIF - tous les principaux formats d’image</p>
+            </div>
+
+            <div class="feature">
+                <h4>🎨 Éditeur de Pixel Art</h4>
+                <p>Dessinez directement à l'écran avec des outils professionnels</p>
+            </div>
+
+            <div class="feature">
+                <h4>🎯 Redimensionnement Intelligent</h4>
+                <p>Redimensionne automatiquement tout en gardant les proportions</p>
+            </div>
+
+            <div class="feature">
+                <h4>🎨 Optimisation des Couleurs</h4>
+                <p>Trois modes : Palette limitée, couleurs complètes ou niveaux de gris</p>
+            </div>
+
+            <div class="feature">
+                <h4>⏱️ Contrôle de la Vitesse</h4>
+                <p>Réglez le délai entre les pixels pour une meilleure performance</p>
+            </div>
+
+            <div class="feature">
+                <h4>👀 Aperçu en Temps Réel</h4>
+                <p>Voyez à quoi ressemblera votre image avant de générer le script</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>⚡ Démarrage Rapide</h3>
+            <p><strong>1. Ouvrez wplace.live et appuyez sur F12 (Console)</strong></p>
+            <p><strong>2. Collez ce code EN PREMIER pour charger le bot :</strong></p>
+            <code style="background: #2d3748; color: #e2e8f0; padding: 15px; display: block; margin: 10px 0; border-radius: 4px; font-family: monospace; word-break: break-all;">
+fetch('https://raw.githubusercontent.com/gcampos04/wplace-automation/main/wplace-bot.js').then(r=>r.text()).then(eval)
+            </code>
+            <p><strong>3. Attendez que le panneau apparaisse, puis choisissez une option :</strong></p>
+            <ul style="text-align: left; margin-top: 10px;">
+                <li>🖼️ <strong>Upload direct :</strong> Cliquez sur "📁 Charger une Image" dans le panneau</li>
+                <li>🔧 <strong>Convertisseur :</strong> Cliquez sur "🔧 Convertisseur" pour des images existantes</li>
+                <li>🎨 <strong>Éditeur :</strong> Cliquez sur "🎨 Éditeur" pour dessiner depuis zéro</li>
+                <li>❤️ <strong>Test rapide :</strong> Tapez <code>wplaceBot.loadHeartImage(); wplaceBot.start();</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🎯 Conseils Importants</h3>
+            <ul style="text-align: left;">
+                <li><strong>⚠️ Chargez TOUJOURS le bot AVANT</strong> d'utiliser un outil</li>
+                <li><strong>Console :</strong> F12 → onglet "Console" (Chrome/Firefox/Edge)</li>
+                <li><strong>Position :</strong> Configurez X et Y où vous voulez commencer (ex : 100, 100)</li>
+                <li><strong>Taille :</strong> Maximum 50x50 pixels pour un dessin rapide</li>
+                <li><strong>Délai :</strong> Minimum 1000ms entre chaque pixel (1 seconde)</li>
+                <li><strong>Test :</strong> Commencez avec des images petites</li>
+                <li><strong>Arrêt :</strong> Tapez <code>wplaceBot.stop()</code> pour arrêter</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
